@@ -43,7 +43,9 @@ export function createTray(tray, win) {
 
   // Watcher method on the window to support tray behavior - hide the window on pointer unfocus
   win.on('blur', () => {
-    win.hide();
+    if (!win.webContents.isDevToolsOpened()) { // Don't hide if devtools is open
+      win.hide();
+    }
   });
 
   // Disable dock
