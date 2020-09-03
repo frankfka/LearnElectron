@@ -15,7 +15,7 @@ import {defineComponent} from "vue";
 
 const ipcRenderer: IpcRenderer = window.ipcRenderer;
 
-export default defineComponent({
+const HelloWorld = defineComponent({
   data: function () {
     return {
       inputVal: '',
@@ -43,6 +43,7 @@ export default defineComponent({
     }
   },
 })
+export default HelloWorld;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
