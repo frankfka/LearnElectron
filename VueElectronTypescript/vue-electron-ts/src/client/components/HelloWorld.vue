@@ -33,11 +33,11 @@ const HelloWorld = defineComponent({
     })
   },
   methods: {
-    onSubmitClicked: function () {
+    onSubmitClicked: function(): void {
       console.log(this.inputVal)
       this.mainReturnVal = ipcRenderer.sendSync('sync-message', this.inputVal)
     },
-    onSubmitClickedAsync: function () {
+    onSubmitClickedAsync: function(): void {
       console.log(this.inputVal)
       ipcRenderer.send('async-message', this.inputVal)
     }
